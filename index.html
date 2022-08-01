@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padronização de usuários</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
+    <title>User standardizations</title>
 </head>
 <body>
     <h1>Solve</h1><h1 style="color: white;">4</h1><h1>Me</h1>
-    <div>
-        <select name="select" id="division">
-        <datalist id="datalist">
-                <option value="0">Contact Center</option>
-                <option value="1">GAO</option>
-                <option value="2">Ouvidoria</option>
-                <option value="3">Tempo Assistência</option>
+    <center><div>
+        <label for="" id="howManyUsers"><label class="asterisk">*</label>How many users?</label>
+        <input type="text" name="" id="user" placeholder="ex: 9">
+        <label><label class="asterisk">*</label>What is the first extension?</label>
+        <input type="text" name="" class="extension" placeholder="ex: 4090">
+        <label for="">What is the manager's email?</label>
+        <input type="email" name="" id="emailManager" placeholder="ex: mpcarvalho@brasilseg.com.br">
+        <label for="">Location:</label>
+        <select name="" id="location">
+            <datalist>
+                <option value="" hidden></option>
+                <option value="SP">SP</option>
+                <option value="FRANCA">FRANCA</option>
             </datalist>
         </select>
-        <p>Quantos usuários?</p>
-        <input type="text" name="" id="user">
-        <p>Apartir de qual Extension?</p>
-        <input type="text" name="" class="extension"> <br>
-        <textarea name="" id="" cols="30" rows="10" placeholder="ABHAY CHARAN GUINATTI LUTGENS RIZZO 
-ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea> <br>
-        <button type="submit" onclick="clicked()">Enviar</button>
-    </div>
+        <label for=""><label class="asterisk">*</label>Division:</label>
+        <select name="select" id="division">
+        <datalist id="datalist">
+                <option value="" hidden></option>
+                <option value="1">Contact Center</option>
+                <option value="2">GAO</option>
+                <option value="3">Ouvidoria</option>
+                <option value="4">Tempo Assistência</option>
+                <option value="5">Teste (Capgemini)</option>
+            </datalist>
+        </select>
+        <label for=""><label class="asterisk">*</label>What are the names?</label>
+        <textarea name="" id="name_id" cols="30" rows="10" placeholder="ABHAY CHARAN GUINATTI LUTGENS RIZZO 
+ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
+        <label for=""><label class="asterisk">*</label>What are the logins?</label>
+        <textarea name="" id="login_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
+        <button type="submit" value="save" onclick="clicked()">Save</button>
+    </div></center>
     <script src="index.js"></script>
 </body>
 </html>
