@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    margin-top: 50px;
+    background-color: black;
+}
+
+h1 {
+    display: contents;
+    font-size: 50px;
+    color: rgb(65, 65, 255);
+}
+
+div {
+    margin-left: 265px;
+    height: 520px;
+    width: 820px;
+    background-color: white;
+    border-radius: 10px 10px 10px;
+}
+
+textarea {
+    resize: both;
+    max-height: 287px;
+    max-width: 788px;
+}
