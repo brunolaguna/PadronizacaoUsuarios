@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
     background-color: black;
 }
 
@@ -11,15 +11,85 @@ h1 {
 }
 
 div {
-    margin-left: 265px;
-    height: 520px;
+    height: 1420px;
     width: 820px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.938);
     border-radius: 10px 10px 10px;
+    box-shadow: 2px 2px 2px 2px rgb(255, 234, 234);
+    display: grid;
+}
+
+
+label{
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+}
+
+.asterisk {
+    color: blue;
+}
+
+input, #location, #division{
+    position: relative;
+    margin-top: -10px;
+    margin-left: 375px;
+    height: 20px;
+    width: 60px;
+    text-align: center;
+}
+
+input:focus::placeholder{
+    color: rgb(199, 199, 199);
+}
+
+
+#emailManager{
+    margin-left: 280px;
+    width: 250px;
+}
+
+
+#location{
+    margin-left: 364px;
+    width: 90px;
+}
+
+#division{
+    margin-left: 311px;
+    width: 200px;
 }
 
 textarea {
+    margin-top: 5px;
+    margin-left: 110px;
+    height: 500px;
+    width: 600px;
     resize: both;
     max-height: 287px;
     max-width: 788px;
+    margin-bottom: 15px;
+}
+
+textarea:focus::placeholder{
+    color: rgb(199, 199, 199);
+}
+
+button {
+    margin-left: 270px;
+    margin-bottom: 30px;
+    width: 300px;
+    border-radius: 10px 10px 10px;
+    border-color: rgb(87, 146, 255);
+    background-image: linear-gradient(to left, rgb(54, 124, 253), rgb(195, 223, 255) 98%);
+    box-shadow: 2px 2px 2px 2px black;
+    font-weight: 900;
+    font-size: 17px;
+}
+
+button:hover{
+    background-image: linear-gradient(to left, rgb(32, 110, 255), rgb(139, 193, 255) 98%);
+    border-color: rgb(32, 110, 255);
+    box-shadow: 1px 1px 1px 1px black;
+    cursor: pointer;
 }
