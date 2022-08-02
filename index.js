@@ -68,7 +68,6 @@ async function clicked() {
                     hole[i] = `\n"${nome[i++]}","${login[z++]}","","${e++}","PRESTADOR","","${emailManager}","${location}","employee: [Teste], Architect - Simple Access: [Teste]", , Teste, , `
                 }
             } 
-            
             var myBlob = new Blob(
                 [string, hole.join("")],
                 {type: "text/plain"}
