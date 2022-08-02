@@ -1,33 +1,36 @@
 body {
     text-align: center;
     margin-top: 10px;
-    background-color: black;
+    margin-bottom: 25px;
+    background-image: linear-gradient(to bottom, white, #F0F2F5 20%);
 }
 
 h1 {
     display: contents;
-    font-size: 50px;
-    color: rgb(65, 65, 255);
+    font-size: 3em;
+    color: #5D87B6;
 }
 
 div {
+    margin: auto;
     height: 1420px;
-    width: 820px;
-    background-color: rgba(255, 255, 255, 0.938);
+    width: 50%;
+    background-color: #9CB8F3;
     border-radius: 10px 10px 10px;
-    box-shadow: 2px 2px 2px 2px rgb(255, 234, 234);
+    box-shadow: 4px 4px 0.5em black;
     display: grid;
 }
 
 
 label{
+    
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-top: 20px;
 }
 
 .asterisk {
-    color: blue;
+    color: red;
 }
 
 input, #location, #division{
@@ -81,7 +84,7 @@ button {
     width: 300px;
     border-radius: 10px 10px 10px;
     border-color: rgb(87, 146, 255);
-    background-image: linear-gradient(to left, rgb(54, 124, 253), rgb(195, 223, 255) 98%);
+    background-color: #F0F2F5;
     box-shadow: 2px 2px 2px 2px black;
     font-weight: 900;
     font-size: 17px;

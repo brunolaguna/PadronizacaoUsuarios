@@ -1,0 +1,163 @@
+body {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-image: linear-gradient(to bottom, #153145 30%, #5D87B6);                      /*#153145*/ /*#5D87B6*/
+}
+
+h1 {
+    display: contents;
+    font-size: 300%;
+    color: #6699d3; 
+    text-shadow: 1px 1px 0.07em black;
+}
+
+h1:hover{
+    color: #679ad4;
+    cursor: pointer;
+    font-size: 3.35em;
+    text-shadow: 7px 7px 4px rgba(0, 0, 0, 0.644);
+    -webkit-transition: 0.5s;
+}
+
+h1:not(:hover){
+    display: contents;
+    font-size: 300%;
+    color: #6699d3;
+    text-shadow: 1px 1px 0.07em black;
+    -webkit-transition: 0.5s;
+}
+
+div {
+    padding-top: 1%;
+    text-align: center;
+    margin: auto;
+    height: 1420px;
+    min-width: 280px;
+    width: 50%;
+    background-color: white;
+    border-radius: 10px 10px 10px;
+    box-shadow: 4px 4px 0.5em black;
+    display: flex;
+    flex-direction: column;
+}
+
+.asterisk {
+    color: #0077ff;
+}
+
+@media screen and (min-width: 701px) {
+    label{
+        position: relative;
+        top: 1%;
+        margin: auto;
+        font-size: 17px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    } 
+}
+
+@media screen and (max-width: 700px) {
+    label{
+        position: relative;
+        top: 1%;
+        margin: auto;
+        font-size: 13px;
+        font-weight: bold;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    } 
+}
+
+input{
+    position: relative;
+    margin: auto;
+    height: 1%;
+    width: 8%;
+    min-width: 57px;
+    text-align: end;
+}
+
+input:hover{
+    border-color: rgb(133, 169, 248);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
+    transition: all 0.1s;
+}
+
+input:hover::placeholder, #location:hover::placeholder, #division:hover::placeholder{
+    font-size: 12.8px;
+    transition: all 80ms;
+}
+
+#location, #division{
+    text-align: center;
+    margin: auto;
+    position: relative;
+    top: -0.6%;
+    height: 20px;
+}
+
+#location:hover, #division:hover{
+    border: 2px solid rgb(133, 169, 248);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
+    font-size: 12.8px;
+}
+
+input:focus::placeholder{
+    color: rgb(199, 199, 199);
+}
+
+
+#emailManager{
+    text-align: center;
+    width: 250px;
+}
+
+
+#location{
+    width: 90px;
+}
+
+#division{
+    width: 150px;
+}
+
+textarea {
+    margin-top: 5px;
+    margin: auto;
+    height: 10%;
+    width: 40%;
+    resize: both;
+    min-height: 80px;
+    max-height: 287px;
+    min-width: 200px;
+    max-width: 550px;
+    margin-bottom: 15px;
+}
+
+textarea:focus::placeholder{
+    color: rgb(199, 199, 199);
+}
+
+hr{
+    text-align: center;
+    margin: auto; 
+    height: 0.001%; width: 93%; 
+    border-color: #8BC1FF;
+}
+
+button {
+    margin: auto;
+    margin-bottom: 30px;
+    width: 65%;
+    border-radius: 10px 10px 10px;
+    border-color: rgb(87, 146, 255);
+    background-image: linear-gradient(to left, rgb(54, 124, 253), rgb(195, 223, 255) 98%);
+    box-shadow: 2px 2px 2px 2px black;
+    font-weight: 900;
+    font-size: 17px;
+}
+
+button:hover{
+    background-image: linear-gradient(to left, rgb(32, 110, 255), rgb(139, 193, 255) 98%);
+    border-color: rgb(32, 110, 255);
+    box-shadow: 1px 1px 1px 1px black;
+    cursor: pointer;
+}
