@@ -80,13 +80,44 @@ async function clicked() {
                 // SAVE FILE
                 await fileStream.write(myBlob)
                 await fileStream.close()
-            }
         }
+}
 
-        
-        // SELECT
-    
-        //var l = `"${nome[i++]}","jbrocanell@brasilseg.com.br","","46074","ATENDENTE","SUPV RELAC COM CLIENTES I","tnelima@brasilseg.com.br","SP","employee: [Contact Center], Communicate - User: [Contact Center], Outbound Agent: [Contact Center], Permissões Adicionais TLV Agile: [Broto; Contact Center; Default; GAO; Home; Mapfre; Núcleo Sinistro Multirrisco; Ouvidoria; Tempo Assistência; Tecnologia; Telesubscrição], User: [Contact Center; Home]","","Contact Center","",""\n`
-        
-        
-        // criando um blob object
+//const four = document.getElementById('four')
+//
+//function fourFunc(){
+//    four.innerHTML = 'oi'
+//}
+
+const four = document.getElementById('four')
+const div = document.querySelector('div')
+const h1 = document.querySelector('h1')
+const body = document.querySelector('body')
+const me = document.getElementById('me')
+four.addEventListener("click", ()=>{
+    me.style.position = 'absolute'
+    me.style.left = '100%'
+    me.style.visibility = 'hidden'
+    h1.style.visibility = 'hidden'
+    four.style.margin = 'auto'
+    four.style.fontSize = '20em'
+    four.style.visibility = 'visible'
+    four.style.textShadow = '80px 80px 15px black'
+    div.style.minWidth = '0%'
+    div.style.width = '30%'
+    div.style.height = '4000px'
+    div.style.boxShadow = '0px 0px 0px'
+    div.style.borderRadius = '4px 4px 4px'
+    four.style.transition ='2s'
+    body.style.overflow = 'hidden'
+    four.style.zIndex = '1'
+    div.style.zIndex = '-1'
+    four.style.webkitTextStrokeWidth = '3px'
+    four.style.webkitTextStrokeColor = 'black'
+    div.style.visibility = 'hidden'
+    div.style.transition = '2s'
+})
+
+//four.addEventListener(()=>{
+//    four.style.fontSize = '25em'
+//})

@@ -5,6 +5,7 @@ body {
 }
 
 h1 {
+    transform-style: preserve-3d;
     display: contents;
     font-size: 300%;
     color: #6699d3; 
@@ -20,11 +21,19 @@ h1:hover{
 }
 
 h1:not(:hover){
+    transform-style: preserve-3d;
     display: contents;
     font-size: 300%;
     color: #6699d3;
     text-shadow: 1px 1px 0.07em black;
     -webkit-transition: 0.5s;
+}
+
+#four{
+    color: #034879;
+}
+#four:hover{
+    color: #4c7fa8;
 }
 
 div {
