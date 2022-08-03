@@ -82,11 +82,15 @@ async function clicked() {
                 await fileStream.close()
             }
         }
-
-        
-        // SELECT
+let me = document.getElementById('me')
+let solve = document.querySelector('h1')
+let four = document.getElementById('four')
+four.addEventListener('click', ()=>{
+    solve.style.fontSize = '70px'
+    solve.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
+    four.style.fontSize = '80px'
+    four.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
+    me.style.fontSize = '70px'
+    me.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
     
-        //var l = `"${nome[i++]}","jbrocanell@brasilseg.com.br","","46074","ATENDENTE","SUPV RELAC COM CLIENTES I","tnelima@brasilseg.com.br","SP","employee: [Contact Center], Communicate - User: [Contact Center], Outbound Agent: [Contact Center], Permissões Adicionais TLV Agile: [Broto; Contact Center; Default; GAO; Home; Mapfre; Núcleo Sinistro Multirrisco; Ouvidoria; Tempo Assistência; Tecnologia; Telesubscrição], User: [Contact Center; Home]","","Contact Center","",""\n`
-        
-        
-        // criando um blob object
+})

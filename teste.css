@@ -1,7 +1,9 @@
 body {
-    margin-top: 1%;
+    margin-top: 76%;
     margin-bottom: 1%;
-    background-image: linear-gradient(to bottom, #153145 30%, #5D87B6);                      /*#153145*/ /*#5D87B6*/
+    background-image: linear-gradient(to bottom, #153145 30%, #5D87B6);         /*#153145*/ /*#5D87B6*/
+    background-repeat: no-repeat;
+    z-index: -1;                     
 }
 
 h1 {
@@ -27,8 +29,17 @@ h1:not(:hover){
     -webkit-transition: 0.5s;
 }
 
-div {
-    padding-top: 1%;
+#four{
+    color: #034879;
+}
+#four:hover{
+    color: #4c7fa8;
+}
+
+.div {
+    position: absolute;
+    top: 0%;
+    padding-top: 0.3%;
     text-align: center;
     margin: auto;
     height: 1420px;
@@ -39,6 +50,16 @@ div {
     box-shadow: 4px 4px 0.5em black;
     display: flex;
     flex-direction: column;
+}
+
+#front {
+    z-index: 1;
+}
+
+#back{
+    position: absolute;
+    top: 0%;
+    z-index: 0;
 }
 
 .asterisk {
