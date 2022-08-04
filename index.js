@@ -82,15 +82,40 @@ async function clicked() {
                 await fileStream.close()
             }
         }
-let me = document.getElementById('me')
-let solve = document.querySelector('h1')
-let four = document.getElementById('four')
+const back = document.getElementById('back')
+const front = document.getElementById('front')
+const card = document.getElementById('card')
+//let me = document.getElementById('me')
+//let solve = document.querySelector('h1')
+const four = document.querySelector('.four')
+//const p = document.getElementById('pa')
+back.style.visibility = 'hidden'
 four.addEventListener('click', ()=>{
-    solve.style.fontSize = '70px'
-    solve.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
-    four.style.fontSize = '80px'
-    four.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
-    me.style.fontSize = '70px'
-    me.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
-    
+    back.style.visibility = 'visible'
+    //solve.style.fontSize = '70px'
+    //solve.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
+    //four.style.fontSize = '80px'
+    //four.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
+    //me.style.fontSize = '70px'
+    //me.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
+    card.classList.toggle('flip')
+    front.style.visibility = 'hidden'
+    front.style.transition = '3s'
+    //back.style.opacity = '0'
+    //back.style.transition = '.6s'
+    //back.style.zIndex = '-1'
+    //back.style.transition = '2s'
 })
+
+
+
+const quatro = document.getElementById('quatro')
+quatro.addEventListener('click', ()=>{
+    card.classList.toggle('flip')
+    front.style.visibility = 'visible'
+    back.style.visibility = 'hidden'
+    back.style.transition = '3s'
+})
+
+
+

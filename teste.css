@@ -1,9 +1,7 @@
 body {
-    margin-top: 76%;
-    margin-bottom: 1%;
-    background-image: linear-gradient(to bottom, #153145 30%, #5D87B6);         /*#153145*/ /*#5D87B6*/
-    background-repeat: no-repeat;
-    z-index: -1;                     
+    padding: 1%;
+    background-image: linear-gradient(to right, #153145 30%, #5D87B6);         /*#153145*/ /*#5D87B6*/
+    overflow-x: hidden;       
 }
 
 h1 {
@@ -29,21 +27,27 @@ h1:not(:hover){
     -webkit-transition: 0.5s;
 }
 
-#four{
+.four{
     color: #034879;
 }
-#four:hover{
+.four:hover{
     color: #4c7fa8;
 }
 
-.div {
+#card{
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all 3s;
+}
+
+.face{
     position: absolute;
-    top: 0%;
     padding-top: 0.3%;
     text-align: center;
     margin: auto;
     height: 1420px;
-    min-width: 280px;
+    min-width: 305px;
     width: 50%;
     background-color: white;
     border-radius: 10px 10px 10px;
@@ -53,13 +57,17 @@ h1:not(:hover){
 }
 
 #front {
-    z-index: 1;
+    object-fit: contain;
+    transform: rotateY(180deg);
 }
 
 #back{
-    position: absolute;
-    top: 0%;
-    z-index: 0;
+    backface-visibility: hidden;
+    color: red;
+}
+
+.flip{
+    transform: rotateY(180deg);
 }
 
 .asterisk {
