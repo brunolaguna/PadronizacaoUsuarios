@@ -11,8 +11,8 @@
 <body>
     <div class="flip" id="card">
         <div class="face" id="front">
-            <h1>Solve</h1><h1 class="four">4</h1><h1 id="me">ME</h1>
-            <hr style="border-color: #034879; position: absolute; top: 11%; width: 49.5%;">
+            <h1>Solve</h1><h1 id="four">4</h1><h1 id="me">ME</h1>
+            <hr id="firstHr">
             <label for="" id="howManyUsers"><label class="asterisk">*</label>Quantos usuários?</label>
             <input type="number" name="" id="user" placeholder="ex: 9">
             <label><label class="asterisk">*</label>Qual a primeira extension?</label>
@@ -49,8 +49,23 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
         </div>
 
         <div class="face" id="back">
-            <h1 class="four" id="quatro" style="display: flex; margin: auto;">4</h1>
-            <input type="text" style="height: 10%;">
+            <h1>Solve</h1><h1 class="four" id="quatro">4</h1><h1>ME</h1>
+            <label for="">Utilizar os usuários anteriores:</label>
+            <input type="checkbox" name="" id="checkbox" onclick="viewcheckbox()">
+            <label for="">Quantos usuários?</label>
+            <input type="number" name="" id="userWebRTC">
+            <label for="">Quais são os logins?</label>
+            <textarea name="" id="loginWebRTC_id" cols="30" rows="10"></textarea>
+            <label for="">Site:</label>
+            <select name="" id="">
+                <datalist>
+                    <option value="SITE_SP">SITE_SP</option>
+                    <option value="GAO">GAO</option>
+                </datalist>
+            </select>
+            <label for="">Quais são os nome?</label>
+            <textarea name="" id="nameWebRTC_id" cols="30" rows="10"></textarea>
+            <button type="submit" onclick="saveWebRTC()">Salvar</button>
         </div>
 
     </div>

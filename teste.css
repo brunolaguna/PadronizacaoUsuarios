@@ -3,6 +3,18 @@ body {
     background-image: linear-gradient(to right, #153145 30%, #5D87B6);         /*#153145*/ /*#5D87B6*/
     overflow-x: hidden;       
 }
+@media screen and (max-width: 375px) {
+    body{
+        margin-top: -0.9%;
+    }
+}
+
+#firstHr{
+    border-color: #034879;
+    position: absolute;
+    top: 5%;
+    width: 99.5%;
+}
 
 h1 {
     display: contents;
@@ -27,33 +39,52 @@ h1:not(:hover){
     -webkit-transition: 0.5s;
 }
 
-.four{
-    color: #034879;
+#four{
+    color: #034879;                                             /*color: #034879;*/
 }
-.four:hover{
-    color: #4c7fa8;
+#four:hover{
+    color: #4c7fa8;                                        /*color: #4c7fa8;*/                 
 }
 
 #card{
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
-    transition: all 3s;
+    transition: all 1s;
 }
 
-.face{
-    position: absolute;
-    padding-top: 0.3%;
-    text-align: center;
-    margin: auto;
-    height: 1420px;
-    min-width: 305px;
-    width: 50%;
-    background-color: white;
-    border-radius: 10px 10px 10px;
-    box-shadow: 4px 4px 0.5em black;
-    display: flex;
-    flex-direction: column;
+@media screen and (min-width: 1367px) {
+    .face{
+        position: absolute;
+        padding-top: 0.3%;
+        text-align: center;
+        margin: auto;
+        height: 1420px;
+        min-width: 305px;
+        width: 45%;
+        background-color: white;
+        border-radius: 10px 10px 10px;
+        box-shadow: 4px 4px 0.5em black;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .face{
+        position: absolute;
+        padding-top: 0.3%;
+        text-align: center;
+        margin: auto;
+        height: 1420px;
+        min-width: 455px;
+        width: 36%;
+        background-color: white;
+        border-radius: 10px 10px 10px;
+        box-shadow: 4px 4px 0.5em black;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 #front {
@@ -63,7 +94,6 @@ h1:not(:hover){
 
 #back{
     backface-visibility: hidden;
-    color: red;
 }
 
 .flip{
@@ -164,7 +194,6 @@ textarea {
 textarea:focus::placeholder{
     color: rgb(199, 199, 199);
 }
-
 hr{
     text-align: center;
     margin: auto; 
@@ -189,4 +218,11 @@ button:hover{
     border-color: rgb(32, 110, 255);
     box-shadow: 1px 1px 1px 1px black;
     cursor: pointer;
+}
+
+#quatro{
+    color: #034879;                                             /*color: #034879;*/
+}
+#quatro:hover{
+    color: #4c7fa8;                                        /*color: #4c7fa8;*/                 
 }

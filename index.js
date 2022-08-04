@@ -80,14 +80,14 @@ async function clicked() {
                 // SAVE FILE
                 await fileStream.write(myBlob)
                 await fileStream.close()
-            }
         }
+}
 const back = document.getElementById('back')
 const front = document.getElementById('front')
 const card = document.getElementById('card')
 //let me = document.getElementById('me')
 //let solve = document.querySelector('h1')
-const four = document.querySelector('.four')
+const four = document.querySelector('#four')
 //const p = document.getElementById('pa')
 back.style.visibility = 'hidden'
 four.addEventListener('click', ()=>{
@@ -100,7 +100,7 @@ four.addEventListener('click', ()=>{
     //me.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
     card.classList.toggle('flip')
     front.style.visibility = 'hidden'
-    front.style.transition = '3s'
+    front.style.transition = '1s'
     //back.style.opacity = '0'
     //back.style.transition = '.6s'
     //back.style.zIndex = '-1'
@@ -114,8 +114,39 @@ quatro.addEventListener('click', ()=>{
     card.classList.toggle('flip')
     front.style.visibility = 'visible'
     back.style.visibility = 'hidden'
-    back.style.transition = '3s'
+    back.style.transition = '1s'
 })
 
+
+const checkbox = document.querySelector('#checkbox')
+var userWebRTC = document.getElementById('userWebRTC')
+var nameWebRTC_id = document.getElementById('nameWebRTC_id') //.value.split('\n')
+var loginWebRTC_id = document.getElementById('loginWebRTC_id') //.value.split('\n')
+
+//if(loginWebRTC_id.){
+//    var loginWebRTC_id = document.getElementById('loginWebRTC_id').value.split('@')
+//}
+
+
+
+function viewcheckbox(){
+    if(checkbox.checked === true){
+        userWebRTC.disabled = true
+        loginWebRTC_id.disabled = true
+        nameWebRTC_id.disabled = true
+    } else {
+        userWebRTC.disabled = false
+        loginWebRTC_id.disabled = false
+        nameWebRTC_id.disabled = false
+    }
+}
+
+async function saveWebRTC(){
+    i=0
+    var hole = []
+    while(i<userWebRTC.value){
+        hole[i] = `Unique_Phone_Name,Existing_Phone_Base,Existing_Site_Name,Valid_Email_Address,,,,,,`
+    }
+}
 
 
