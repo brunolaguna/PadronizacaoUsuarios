@@ -50,14 +50,22 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
 
         <div class="face" id="back">
             <h1>Solve</h1><h1 class="four" id="quatro">4</h1><h1>ME</h1>
-            <label for="">Utilizar os usuários anteriores:</label>
-            <input type="checkbox" name="" id="checkbox" onclick="viewcheckbox()">
+            <hr id="firstHr" style="top: 6%;">
+            <label for="" class="checkbox" style="left: 0%;">Utilizar os usuários anteriores:</label>
+            <input type="checkbox" name="" class="checkbox" id="checkbox" onclick="viewcheckbox()" style="height: 1.7%;">
             <label for="">Quantos usuários?</label>
             <input type="number" name="" id="userWebRTC">
             <label for="">Quais são os logins?</label>
             <textarea name="" id="loginWebRTC_id" cols="30" rows="10"></textarea>
+            <label for="">Base Settings:</label>
+            <select name="" id="baseSettings">
+                <datalist>
+                    <option value="Genesys Cloud WebRTC">Genesys Cloud WebRTC</option>
+                    <option value="Koller">Koller</option>
+                </datalist>
+            </select>
             <label for="">Site:</label>
-            <select name="" id="">
+            <select name="" id="select_site">
                 <datalist>
                     <option value="SITE_SP">SITE_SP</option>
                     <option value="GAO">GAO</option>
@@ -65,6 +73,7 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
             </select>
             <label for="">Quais são os nome?</label>
             <textarea name="" id="nameWebRTC_id" cols="30" rows="10"></textarea>
+            <hr>
             <button type="submit" onclick="saveWebRTC()">Salvar</button>
         </div>
 

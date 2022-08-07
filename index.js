@@ -82,6 +82,7 @@ async function clicked() {
                 await fileStream.close()
         }
 }
+let body = document.querySelector('body')
 const back = document.getElementById('back')
 const front = document.getElementById('front')
 const card = document.getElementById('card')
@@ -90,6 +91,14 @@ const card = document.getElementById('card')
 const four = document.querySelector('#four')
 //const p = document.getElementById('pa')
 back.style.visibility = 'hidden'
+
+// cronometro para não sumir o #card no 'double click'
+//i=0
+//var e=0
+//if(four.clicked === true){
+//    
+//}
+
 four.addEventListener('click', ()=>{
     back.style.visibility = 'visible'
     //solve.style.fontSize = '70px'
@@ -99,22 +108,25 @@ four.addEventListener('click', ()=>{
     //me.style.fontSize = '70px'
     //me.style.textShadow = '7px 7px 4px rgba(0, 0, 0, 0.644)'
     card.classList.toggle('flip')
-    front.style.visibility = 'hidden'
-    front.style.transition = '1s'
+    //front.style.visibility = 'hidden'
+    //front.style.transition = '.9s'
+    //body.style.paddingBottom = '100%'
+    //body.style.transition = '1.5s'
+    
     //back.style.opacity = '0'
     //back.style.transition = '.6s'
     //back.style.zIndex = '-1'
     //back.style.transition = '2s'
 })
 
-
-
 const quatro = document.getElementById('quatro')
 quatro.addEventListener('click', ()=>{
     card.classList.toggle('flip')
-    front.style.visibility = 'visible'
-    back.style.visibility = 'hidden'
-    back.style.transition = '1s'
+    //quatro.removeEventListener('click')
+    //back.style.visibility = 'hidden'
+    //back.style.transition = '1s'
+    //front.style.visibility = 'visible'
+    //front.style.transition = '.9s'
 })
 
 
@@ -123,9 +135,6 @@ var userWebRTC = document.getElementById('userWebRTC')
 var nameWebRTC_id = document.getElementById('nameWebRTC_id') //.value.split('\n')
 var loginWebRTC_id = document.getElementById('loginWebRTC_id') //.value.split('\n')
 
-//if(loginWebRTC_id.){
-//    var loginWebRTC_id = document.getElementById('loginWebRTC_id').value.split('@')
-//}
 
 
 
@@ -140,13 +149,49 @@ function viewcheckbox(){
         nameWebRTC_id.disabled = false
     }
 }
-
 async function saveWebRTC(){
-    i=0
+    let nome = document.querySelector('#name_id').value.toUpperCase().split('\n')
+    let login = document.getElementById('login_id').value.toLowerCase().split('\n')
+    var user = document.getElementById('user').value
+    let string = `name,base,site,email,remoteAddress,hardwareId,keyLabel,lineAppearanceId,did,extension`
+    var userWebRTC = document.getElementById('userWebRTC').value
+    var select_site = document.getElementById('select_site').value
+    var baseSettings = document.getElementById('baseSettings').value
+    console.log(select_site)
     var hole = []
-    while(i<userWebRTC.value){
-        hole[i] = `Unique_Phone_Name,Existing_Phone_Base,Existing_Site_Name,Valid_Email_Address,,,,,,`
+    if(checkbox.checked === true){
+        i=0
+        while(i<user){
+            login[i] = login[i].substring(0, login[i].indexOf('@'))
+            hole[i] = `\n${login[i]}-WebRTC,${baseSettings},${select_site},${nome[i++]},,,,,,`
+        }
+    } else {
+        var nameWebRTC_id = document.getElementById('nameWebRTC_id').value.split('\n')
+        var loginWebRTCArray = document.getElementById('loginWebRTC_id').value.split('\n')
+        console.log(loginWebRTCArray)
+        i=0
+        var loginWebRTC = []
+        while(i<Number.parseInt(userWebRTC)){
+            loginWebRTC[i] = loginWebRTCArray[i].substring(0, loginWebRTCArray[i].indexOf('@'))
+            hole[i] = `\n${loginWebRTC[i]}-WebRTC,${baseSettings},${select_site},${nameWebRTC_id[i++]},,,,,,`
+        }
+        console.log(login)
+        console.log(loginWebRTC)// after substring
+        console.log(hole)
+        //while(i<userWebRTC){
+        //    hole[i] = `Unique_Phone_Name,Existing_Phone_Base,Existing_Site_Name,Valid_Email_Address,,,,,,`
+        //}
     }
+    var myBlob = new Blob(
+        [string, hole.join("")],
+        {type: "text/plain"}
+        )
+        
+        // File Handler $ STREAM
+        const fileHandle = await window.showSaveFilePicker()
+        const fileStream = await fileHandle.createWritable()
+        
+        // SAVE FILE
+        await fileStream.write(myBlob)
+        await fileStream.close()
 }
-
-

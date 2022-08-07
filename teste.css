@@ -1,7 +1,8 @@
 body {
     padding: 1%;
     background-image: linear-gradient(to right, #153145 30%, #5D87B6);         /*#153145*/ /*#5D87B6*/
-    overflow-x: hidden;       
+    overflow-x: hidden;     
+    margin-bottom: 86.5%;  
 }
 @media screen and (max-width: 375px) {
     body{
@@ -50,7 +51,7 @@ h1:not(:hover){
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
-    transition: all 1s;
+    transition: all 3s;
 }
 
 @media screen and (min-width: 1367px) {
@@ -90,10 +91,8 @@ h1:not(:hover){
 #front {
     object-fit: contain;
     transform: rotateY(180deg);
-}
-
-#back{
     backface-visibility: hidden;
+    height: 1150px;
 }
 
 .flip{
@@ -181,14 +180,19 @@ input:focus::placeholder{
 textarea {
     margin-top: 5px;
     margin: auto;
-    height: 10%;
+    height: 12%;
     width: 40%;
     resize: both;
     min-height: 80px;
-    max-height: 287px;
+    max-height: 200px;
     min-width: 200px;
-    max-width: 550px;
+    max-width: 450px;
     margin-bottom: 15px;
+}
+
+textarea:hover{
+    border: 1px solid rgb(133, 169, 248);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
 }
 
 textarea:focus::placeholder{
@@ -220,9 +224,75 @@ button:hover{
     cursor: pointer;
 }
 
+#back{
+    height: 1000px;
+    backface-visibility: hidden;
+}
+
 #quatro{
     color: #034879;                                             /*color: #034879;*/
 }
+
 #quatro:hover{
     color: #4c7fa8;                                        /*color: #4c7fa8;*/                 
+}
+/*
+.checkbox{
+    position: relative;
+    height: 1.4%;
+    bottom: 4.1%;
+    left: 23%;
+}
+*/
+/* Responsividade checkbox */ /*
+@media screen and (max-width: 1860px ) {
+    #checkbox{
+        height: 1.2%;
+        left: 18%;
+    }
+}
+
+@media screen and (max-width: 1700px ) {
+    #checkbox{
+        height: 1.1%;
+        bottom: 5.81%;
+        left: 21%;
+    }
+}
+
+@media screen and (max-width: 1490px ) {
+    #checkbox{
+        height: 1.1%;
+        bottom: 5.81%;
+        left: 24%;
+    }
+}
+
+@media screen and (max-width: 1368px ) {
+    #checkbox{
+        height: 1.4%;
+        bottom: 4.2%;
+        left: 27%;
+    }
+}
+
+@media screen and (max-width: 500px ) {
+    #checkbox{
+        height: 1.4%;
+        bottom: 4.3%;
+        left: 27%;
+    }
+}*/
+/* Responsividade checkbox */
+
+#baseSettings, #select_site{
+    margin: auto;
+    height: 20px;
+    width: 180px;
+    text-align: center;
+}
+
+#baseSettings:hover, #select_site:hover{
+    border: 2px solid rgb(133, 169, 248);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
 }
