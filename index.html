@@ -45,18 +45,17 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
             <textarea name="" id="login_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
             <hr>
             <button type="submit" value="save" onclick="clicked()">Salvar</button>
-            <button type="submit" onclick="WebRTC()">Importação WebRTC</button>
+            <button type="submit" class="WebRTC" onclick="WebRTC()">Importação WebRTC</button>
         </div>
-
         <div class="face" id="back">
             <h1>Solve</h1><h1 class="four" id="quatro">4</h1><h1>ME</h1>
             <hr id="firstHr" style="top: 6%;">
             <label for="" class="checkbox" style="left: 0%;">Utilizar os usuários anteriores:</label>
-            <input type="checkbox" name="" class="checkbox" id="checkbox" onclick="viewcheckbox()" style="height: 1.7%;">
+            <input type="checkbox" name="" class="checkbox" id="checkbox" onclick="viewcheckbox()" style="height: 1.8%;">
             <label for="">Quantos usuários?</label>
             <input type="number" name="" id="userWebRTC">
             <label for="">Quais são os logins?</label>
-            <textarea name="" id="loginWebRTC_id" cols="30" rows="10"></textarea>
+            <textarea name="" id="loginWebRTC_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
             <label for="">Base Settings:</label>
             <select name="" id="baseSettings">
                 <datalist>
@@ -69,16 +68,17 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
                 <datalist>
                     <option value="SITE_SP">SITE_SP</option>
                     <option value="GAO">GAO</option>
+                    <option value="SITE_SP_CAMPANHAS">SITE_SP_CAMPANHAS</option>
+                    <option value="SITE_FR_CAMPANHAS">SITE_FR_CAMPANHAS</option>
+                    <option value="TELECOM">TELECOM</option>
                 </datalist>
             </select>
-            <label for="">Quais são os nome?</label>
-            <textarea name="" id="nameWebRTC_id" cols="30" rows="10"></textarea>
             <hr>
             <button type="submit" onclick="saveWebRTC()">Salvar</button>
         </div>
-
+        <!--<label for="">Quais são os nome?</label>
+        <textarea name="" id="nameWebRTC_id" cols="30" rows="10"></textarea>-->
     </div>
-
     <script src="index.js"></script>
 </body>
 </html>

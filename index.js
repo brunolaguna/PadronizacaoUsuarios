@@ -82,6 +82,7 @@ async function clicked() {
                 await fileStream.close()
         }
 }
+
 let body = document.querySelector('body')
 const back = document.getElementById('back')
 const front = document.getElementById('front')
@@ -91,6 +92,12 @@ const card = document.getElementById('card')
 const four = document.querySelector('#four')
 //const p = document.getElementById('pa')
 back.style.visibility = 'hidden'
+
+//function WebRTC(){
+//    back.style.opacity = '1'
+//    front.style.opacity = '0'
+//    front.style.transition = '2s'
+//}
 
 // cronometro para não sumir o #card no 'double click'
 //i=0
@@ -146,7 +153,7 @@ function viewcheckbox(){
     } else {
         userWebRTC.disabled = false
         loginWebRTC_id.disabled = false
-        nameWebRTC_id.disabled = false
+
     }
 }
 async function saveWebRTC(){
@@ -166,14 +173,14 @@ async function saveWebRTC(){
             hole[i] = `\n${login[i]}-WebRTC,${baseSettings},${select_site},${nome[i++]},,,,,,`
         }
     } else {
-        var nameWebRTC_id = document.getElementById('nameWebRTC_id').value.split('\n')
+        //var nameWebRTC_id = document.getElementById('nameWebRTC_id').value.split('\n')
         var loginWebRTCArray = document.getElementById('loginWebRTC_id').value.split('\n')
         console.log(loginWebRTCArray)
         i=0
         var loginWebRTC = []
         while(i<Number.parseInt(userWebRTC)){
             loginWebRTC[i] = loginWebRTCArray[i].substring(0, loginWebRTCArray[i].indexOf('@'))
-            hole[i] = `\n${loginWebRTC[i]}-WebRTC,${baseSettings},${select_site},${nameWebRTC_id[i++]},,,,,,`
+            hole[i] = `\n${loginWebRTC[i]}-WebRTC,${baseSettings},${select_site},${loginWebRTCArray[i++]},,,,,,`
         }
         console.log(login)
         console.log(loginWebRTC)// after substring

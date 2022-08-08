@@ -1,37 +1,26 @@
-body {
+body{
     padding: 1%;
     background-image: linear-gradient(to right, #153145 30%, #5D87B6);         /*#153145*/ /*#5D87B6*/
-    overflow-x: hidden;     
-    margin-bottom: 86.5%;  
+    overflow-x: hidden;
+    margin-bottom: 1120px;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 375px){
     body{
         margin-top: -0.9%;
     }
 }
-
-#firstHr{
-    border-color: #034879;
-    position: absolute;
-    top: 5%;
-    width: 99.5%;
-}
-
-h1 {
+h1{
     display: contents;
     font-size: 300%;
     color: #6699d3; 
     text-shadow: 1px 1px 0.07em black;
 }
-
 h1:hover{
     color: #679ad4;
     cursor: pointer;
-    font-size: 3.35em;
     text-shadow: 7px 7px 4px rgba(0, 0, 0, 0.644);
     -webkit-transition: 0.5s;
 }
-
 h1:not(:hover){
     display: contents;
     font-size: 300%;
@@ -39,28 +28,28 @@ h1:not(:hover){
     text-shadow: 1px 1px 0.07em black;
     -webkit-transition: 0.5s;
 }
-
+#firstHr{
+    position: absolute;
+    top: 5%;
+    width: 99.8%;
+    border-color: #034879;
+}
 #four{
     color: #034879;                                             /*color: #034879;*/
 }
 #four:hover{
     color: #4c7fa8;                                        /*color: #4c7fa8;*/                 
 }
-
 #card{
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
     transition: all 3s;
 }
-
-@media screen and (min-width: 1367px) {
+@media screen and (min-width: 1367px){
     .face{
         position: absolute;
-        padding-top: 0.3%;
         text-align: center;
-        margin: auto;
-        height: 1420px;
         min-width: 305px;
         width: 45%;
         background-color: white;
@@ -70,14 +59,10 @@ h1:not(:hover){
         flex-direction: column;
     }
 }
-
 @media screen and (max-width: 1366px) {
     .face{
         position: absolute;
-        padding-top: 0.3%;
         text-align: center;
-        margin: auto;
-        height: 1420px;
         min-width: 455px;
         width: 36%;
         background-color: white;
@@ -87,97 +72,74 @@ h1:not(:hover){
         flex-direction: column;
     }
 }
-
-#front {
-    object-fit: contain;
+#front{
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    height: 1150px;
+    height: 1100px;
 }
-
 .flip{
     transform: rotateY(180deg);
 }
-
-.asterisk {
+.asterisk{
     color: #0077ff;
 }
-
-@media screen and (min-width: 701px) {
+@media screen and (min-width: 701px){
     label{
-        position: relative;
-        top: 1%;
-        margin: auto;
+        padding-top: 3.5%;
         font-size: 17px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     } 
 }
-
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px){
     label{
-        position: relative;
-        top: 1%;
-        margin: auto;
+        padding-top: 7%;
         font-size: 13px;
         font-weight: bold;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     } 
 }
-
 input{
-    position: relative;
     margin: auto;
-    height: 1%;
+    height: 1.2%;
     width: 8%;
     min-width: 57px;
     text-align: end;
 }
-
 input:hover{
     border-color: rgb(133, 169, 248);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
     transition: all 0.1s;
 }
-
 input:hover::placeholder, #location:hover::placeholder, #division:hover::placeholder{
     font-size: 12.8px;
     transition: all 80ms;
 }
-
 #location, #division{
     text-align: center;
     margin: auto;
     position: relative;
-    top: -0.6%;
+    top: -0.3%;
     height: 20px;
 }
-
 #location:hover, #division:hover{
     border: 2px solid rgb(133, 169, 248);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
     font-size: 12.8px;
 }
-
-input:focus::placeholder{
+input:focus::placeholder, textarea:focus::placeholder{
     color: rgb(199, 199, 199);
 }
-
-
 #emailManager{
     text-align: center;
-    width: 250px;
+    width: 260px;
 }
-
-
 #location{
     width: 90px;
 }
-
 #division{
     width: 150px;
 }
-
-textarea {
+textarea{
     margin-top: 5px;
     margin: auto;
     height: 12%;
@@ -187,52 +149,41 @@ textarea {
     max-height: 200px;
     min-width: 200px;
     max-width: 450px;
-    margin-bottom: 15px;
 }
-
 textarea:hover{
     border: 1px solid rgb(133, 169, 248);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
 }
-
-textarea:focus::placeholder{
-    color: rgb(199, 199, 199);
-}
 hr{
-    text-align: center;
-    margin: auto; 
-    height: 0.001%; width: 93%; 
+    height: 0.001%; width: 99.8%; 
     border-color: #8BC1FF;
 }
-
-button {
+button{
     margin: auto;
-    margin-bottom: 30px;
-    width: 65%;
+    margin-bottom: 3%;
+    width: 50%;
     border-radius: 10px 10px 10px;
     border-color: rgb(87, 146, 255);
     background-image: linear-gradient(to left, rgb(54, 124, 253), rgb(195, 223, 255) 98%);
     box-shadow: 2px 2px 2px 2px black;
-    font-weight: 900;
-    font-size: 17px;
+    font-weight: 800;
+    font-size: 2.1vmin
 }
-
 button:hover{
     background-image: linear-gradient(to left, rgb(32, 110, 255), rgb(139, 193, 255) 98%);
-    border-color: rgb(32, 110, 255);
-    box-shadow: 1px 1px 1px 1px black;
     cursor: pointer;
 }
-
+button:focus{
+    font-size: 1.95vmin;
+    box-shadow: 1px 1px 1px 1px black;
+}
 #back{
-    height: 1000px;
+    height: 850px;
     backface-visibility: hidden;
 }
-
 #quatro{
     color: #034879;                                             /*color: #034879;*/
 }
-
 #quatro:hover{
     color: #4c7fa8;                                        /*color: #4c7fa8;*/                 
 }
@@ -284,14 +235,16 @@ button:hover{
     }
 }*/
 /* Responsividade checkbox */
-
+#userWebRTC{
+    height: 1.3%;
+}
 #baseSettings, #select_site{
     margin: auto;
     height: 20px;
     width: 180px;
     text-align: center;
+    font-size: 79%;
 }
-
 #baseSettings:hover, #select_site:hover{
     border: 2px solid rgb(133, 169, 248);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.220), white 20%);
