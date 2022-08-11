@@ -44,7 +44,7 @@ h1:not(:hover){
     display: flex;
     justify-content: center;
     transform-style: preserve-3d;
-    transition: all 3s;
+    transition: all 2.5s;
 }
 @media screen and (min-width: 1367px){
     .face{
@@ -174,7 +174,7 @@ button:hover{
     cursor: pointer;
 }
 button:focus{
-    font-size: 1.95vmin;
+    font-size: 2vmin;
     box-shadow: 1px 1px 1px 1px black;
 }
 #back{
