@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="teste.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
     <title>Padronização de Usuários</title>
 </head>
+
 <body>
     <div class="flip" id="card">
+
         <div class="face" id="front">
             <h1>Solve</h1><h1 id="four">4</h1><h1 id="me">ME</h1>
             <hr id="firstHr">
@@ -47,15 +49,24 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
             <button type="submit" value="save" onclick="clicked()">Salvar</button>
             <button type="submit" class="WebRTC" onclick="WebRTC()">Importação WebRTC</button>
         </div>
+
         <div class="face" id="back">
             <h1>Solve</h1><h1 class="four" id="quatro">4</h1><h1>ME</h1>
             <hr id="firstHr" style="top: 6%;">
             <label for="" class="checkbox" style="left: 0%;">Utilizar os usuários anteriores:</label>
             <input type="checkbox" name="" class="checkbox" id="checkbox" onclick="viewcheckbox()" style="height: 1.8%;">
-            <label for="">Quantos usuários?</label>
-            <input type="number" name="" id="userWebRTC">
             <label for="">Quais são os e-mails?</label>
             <textarea name="" id="loginWebRTC_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
+            <label for="">Quais são os e-mails?</label>
+            <select name="" id="dominio">
+                <datalist>
+                    <option value="@brasilseg.com.br">Brasilseg</option>
+                    <option value="@tempoassist.com.br">Tempo Assistência</option>
+                    <option value="@mapfre.com">Mapfre</option>
+                    <option value="@teleperformance.com.br">teleperformance</option>
+                    <option value="@solve4me.com.br">Solve4ME</option>
+                </datalist>
+            </select>
             <label for="">Base Settings:</label>
             <select name="" id="baseSettings">
                 <datalist>
@@ -67,17 +78,17 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
             <select name="" id="select_site">
                 <datalist>
                     <option value="SITE_SP">SITE_SP</option>
-                    <option value="GAO">GAO</option>
-                    <option value="SITE_SP_CAMPANHAS">SITE_SP_CAMPANHAS</option>
-                    <option value="SITE_FR_CAMPANHAS">SITE_FR_CAMPANHAS</option>
+                    <option value="SP">SP</option>
+                    <option value="CAMPANHAS BRASILSEG">CAMPANHAS BRASILSEG</option>
+                    <option value="CAMPANHAS SAO PAULO">CAMPANHAS SAO PAULO</option>
+                    <option value="CAMPANHAS FRANCA">CAMPANHAS FRANCA</option>
                     <option value="TELECOM">TELECOM</option>
                 </datalist>
             </select>
             <hr>
             <button type="submit" onclick="saveWebRTC()">Salvar</button>
         </div>
-        <!--<label for="">Quais são os nome?</label>
-        <textarea name="" id="nameWebRTC_id" cols="30" rows="10"></textarea>-->
+
     </div>
     <script src="index.js"></script>
 </body>

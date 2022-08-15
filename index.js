@@ -30,9 +30,18 @@ async function clicked() {
     let string = `"name","email","phone_work","extension","title","department","email_manager","location_work","roles_divisions","queues","division","skills","hire_date"`
     let division = document.getElementById('division').value
     
-    if (nome.length != user || nome.length === 0 || division == 0 || ext == "") {
-        alert('Você informou a quantidade de usuários errada, ou não informou nenhum usuário, ou não selecionou Division!')
-    } else {
+    if(user == 0){
+        alert('Você não informou a quantidade de usuários!')
+    } else if(ext == 0){
+        alert('Você não informou a extension!')
+    } else if(division == 0){
+        alert('Você não selecionou alguma divisão!')
+    } else if(nome.length != login.length){
+        alert('A quantidade de nomes e e-mails estão diferentes!')
+    } else if(nome.length != user){
+        alert('Você informou a quantidade errada de usuários!')
+    }
+    else {
        
         if (division == 1) {
             console.log('1')
@@ -103,10 +112,8 @@ var loginWebRTC_id = document.getElementById('loginWebRTC_id')
 
 function viewcheckbox(){
     if(checkbox.checked === true){
-        userWebRTC.disabled = true
         loginWebRTC_id.disabled = true
     } else {
-        userWebRTC.disabled = false
         loginWebRTC_id.disabled = false
     }
 }
@@ -115,38 +122,48 @@ async function saveWebRTC(){
     var user = document.getElementById('user').value
     let login = document.getElementById('login_id').value.toLowerCase().split('\n')
     let string = `name,base,site,email,remoteAddress,hardwareId,keyLabel,lineAppearanceId,did,extension`
-    var userWebRTC = document.getElementById('userWebRTC').value
     var select_site = document.getElementById('select_site').value
     var baseSettings = document.getElementById('baseSettings').value
-    console.log(select_site)
     login = login.filter(i => i.trim())
     var hole = []
-    var loginWebRTCArray = document.getElementById('loginWebRTC_id').value.split('\n')
+    var loginWebRTCArray = document.getElementById('loginWebRTC_id').value.toLowerCase().split('\n')
     loginWebRTCArray = loginWebRTCArray.filter(i => i.trim())
-    if(checkbox.checked === true && login.length != user){
-        alert('Você informou a quantidade incorreta de usuários!')
-        return 'Erro'
+    let dominio = document.getElementById('dominio').value
+    
+    if((login.length == 0 || user == 0) && checkbox.checked === true){
+        alert('Você não informou a quantidade de usuários!')
+        return
     }
-    else if(checkbox.checked === true && login.length == user){
+    else if(checkbox.checked === true && login.length != user){
+        alert('Você informou a quantidade incorreta de usuários!')
+        return
+    } else if(checkbox.checked === true && login.length == user){
         i=0
         var loginWebRTC_four = []
         while(i<user){
-            loginWebRTC_four[i] = login[i].substring(0, login[i].indexOf('@'))
-            hole[i] = `\n${loginWebRTC_four[i]}-WebRTC,${baseSettings},${select_site},${login[i++]},,,,,,`
+            result = login[i].indexOf('@')
+            if(result != -1){
+                loginWebRTC_four[i] = login[i].substring(0, login[i].indexOf('@'))
+                hole[i] = `\n${loginWebRTC_four[i]}-WebRTC,${baseSettings},${select_site},${login[i]},,,,,,`
+            } else{
+                hole[i] = `\n${login[i]}-WebRTC,${baseSettings},${select_site},${login[i]}${dominio},,,,,,`
+            }
+            i++
         }
-    } else if(userWebRTC == loginWebRTCArray.length && userWebRTC !== 0){
-
+    } else if(loginWebRTCArray.length == 0){
+        alert('Você informou a quantidade errada de usuários!')
+        return
+    } else{
         console.log(loginWebRTCArray)
         i=0
         var loginWebRTC = []
-        while(i<userWebRTC){
-            var result = loginWebRTCArray[i].indexOf('@') // procurar em cada indice do array do 'loginWebRTCArray' o caracter @
+        while(i<loginWebRTCArray.length){
+            result = loginWebRTCArray[i].indexOf('@') // procurar em cada indice do array do 'loginWebRTCArray' o caracter @
             if(result != -1){ // se o @ for encontrado
                 loginWebRTC[i] = loginWebRTCArray[i].substring(0, loginWebRTCArray[i].indexOf('@'))
                 hole[i] = `\n${loginWebRTC[i]}-WebRTC,${baseSettings},${select_site},${loginWebRTCArray[i]},,,,,,`
-            } else { // se o @ for encontrado '== -1' 
-                var inputEmail = prompt('Não foi encontrado o endereço de e-mail do usuário ' + loginWebRTCArray[i] + ', favor informá-lo:' + loginWebRTCArray[i])
-                hole[i] = `\n${loginWebRTCArray[i]}-WebRTC,${baseSettings},${select_site},${inputEmail[i]},,,,,,`
+            } else { // se o @ não for encontrado '== -1' 
+                hole[i] = `\n${loginWebRTCArray[i]}-WebRTC,${baseSettings},${select_site},${loginWebRTCArray[i]}${dominio},,,,,,`
             }
             i++
         }
@@ -154,9 +171,6 @@ async function saveWebRTC(){
         console.log(login)
         console.log(loginWebRTC)// after substring
         console.log(hole)
-    } else{
-        alert('Você informou a quantidade errada de usuários!')
-        return
     }
 
     var myBlob = new Blob(
