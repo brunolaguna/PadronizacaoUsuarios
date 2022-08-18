@@ -10,17 +10,15 @@
 </head>
 
 <body>
-    <div class="flip" id="card">
+    <div class="flip" id="card"> <!--A card for creating the flip with the front and back.-->
 
         <div class="face" id="front">
             <h1>Solve</h1><h1 id="four">4</h1><h1 id="me">ME</h1>
             <hr id="firstHr">
-            <label for="" id="howManyUsers"><label class="asterisk">*</label>Quantos usuários?</label>
-            <input type="number" name="" id="user" placeholder="ex: 9">
-            <label><label class="asterisk">*</label>Qual a primeira extension?</label>
+            <label>Qual a primeira extension?</label>
             <input type="number" name="" class="extension" placeholder="4090">
             <label for="">Qual o "email_manager"?</label>
-            <input type="email" name="" id="emailManager" placeholder="ex: mpcarvalho@brasilseg.com.br">
+            <input type="email" name="" id="emailManager" placeholder="mpcarvalho@brasilseg.com.br">
             <label for="">Localização:</label>
             <select name="" id="location">
                 <datalist>
@@ -29,15 +27,25 @@
                     <option value="FRANCA">FRANCA</option>
                 </datalist>
             </select>
-            <label for=""><label class="asterisk">*</label>Divisão:</label>
+            <label for=""><label class="asterisk">*</label>Division (Função):</label>
             <select name="select" id="division">
                 <datalist id="datalist">
                     <option value="" hidden></option>
-                    <option value="1">Contact Center</option>
+                    <option value="1">Contact Center (Atendente)</option>
                     <option value="2">GAO</option>
                     <option value="3">Ouvidoria</option>
                     <option value="4">Tempo Assistência</option>
                     <option value="5">Teste (Capgemini)</option>
+                </datalist>
+            </select>
+            <label for="">Quais são os domínios dos e-mails?</label>
+            <select name="" id="dominio_four">
+                <datalist>
+                    <option value="@brasilseg.com.br">Brasilseg</option>
+                    <option value="@tempoassist.com.br">Tempo Assistência</option>
+                    <option value="@mapfre.com">Mapfre</option>
+                    <option value="@teleperformance.com.br">teleperformance</option>
+                    <option value="@solve4me.com.br">Solve4ME</option>
                 </datalist>
             </select>
             <label for=""><label class="asterisk">*</label>Quais são os nomes?</label>
@@ -47,17 +55,17 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
             <textarea name="" id="login_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
             <hr>
             <button type="submit" value="save" onclick="clicked()">Salvar</button>
-            <button type="submit" class="WebRTC" onclick="WebRTC()">Importação WebRTC</button>
+            <button type="submit" class="WebRTC" onclick="WebRTC()">Criar WebRTC</button>
         </div>
 
         <div class="face" id="back">
             <h1>Solve</h1><h1 class="four" id="quatro">4</h1><h1>ME</h1>
             <hr id="firstHr" style="top: 6%;">
-            <label for="" class="checkbox" style="left: 0%;">Utilizar os usuários anteriores:</label>
+            <label for="" class="checkbox">Utilizar os usuários anteriores:</label>
             <input type="checkbox" name="" class="checkbox" id="checkbox" onclick="viewcheckbox()" style="height: 1.8%;">
             <label for="">Quais são os e-mails?</label>
             <textarea name="" id="loginWebRTC_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
-            <label for="">Quais são os e-mails?</label>
+            <label for="">Quais são os domínios dos e-mails?</label>
             <select name="" id="dominio">
                 <datalist>
                     <option value="@brasilseg.com.br">Brasilseg</option>
@@ -87,6 +95,7 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
             </select>
             <hr>
             <button type="submit" onclick="saveWebRTC()">Salvar</button>
+            <button type="submit">Criar Perfil</button>
         </div>
 
     </div>
