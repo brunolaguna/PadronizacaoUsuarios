@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <div class="flip" id="card"> <!--A card for creating the flip with the front and back.-->
+    <div class="flip" id="card"> <!--A "card" for creating the flip with the front and back.-->
 
-        <div class="face" id="front">
+        <div class="face" id="front"> <!--Front "card"-->
             <h1>Solve</h1><h1 id="four">4</h1><h1 id="me">ME</h1>
             <hr id="firstHr">
             <label>Qual a primeira extension?</label>
-            <input type="number" name="" class="extension" placeholder="4090">
+            <input type="number" name="" class="extension" id="e" placeholder="4090" onmouseover="mouseacima(e)" onmouseout="mousefora(e)">
             <label for="">Qual o "email_manager"?</label>
             <input type="email" name="" id="emailManager" placeholder="mpcarvalho@brasilseg.com.br">
             <label for="">Localização:</label>
@@ -28,7 +28,7 @@
                 </datalist>
             </select>
             <label for=""><label class="asterisk">*</label>Division (Função):</label>
-            <select name="select" id="division">
+            <select name="select" id="division" onmouseover="mouseacima(division)" onmouseout="mousefora(division)">
                 <datalist id="datalist">
                     <option value="" hidden></option>
                     <option value="1">Contact Center (Atendente)</option>
@@ -50,21 +50,21 @@
             </select>
             <label for=""><label class="asterisk">*</label>Quais são os nomes?</label>
             <textarea name="" id="name_id" cols="30" rows="10" placeholder="ABHAY CHARAN GUINATTI LUTGENS RIZZO 
-ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
+ADRIANA APARECIDA CORREIA DEOCLECIANO" onmouseover="mouseacima(name_id)" onmouseout="mousefora(name_id)"></textarea>
             <label for=""><label class="asterisk">*</label>Quais são os e-mails?</label>
-            <textarea name="" id="login_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
+            <textarea name="" id="login_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br" onmouseover="mouseacima(login_id)" onmouseout="mousefora(login_id)"></textarea>
             <hr>
-            <button type="submit" value="save" onclick="clicked()">Salvar</button>
-            <button type="submit" class="WebRTC" onclick="WebRTC()">Criar WebRTC</button>
+            <button type="submit" value="save" onclick="clicked()">Criar usuário</button>
+            <button type="submit" class="webRTC" onclick="WebRTC()">Criar WebRTC &gt&gt</button>
         </div>
 
-        <div class="face" id="back">
+        <div class="face" id="back"> <!--Back "card"-->
             <h1>Solve</h1><h1 class="four" id="quatro">4</h1><h1>ME</h1>
             <hr id="firstHr" style="top: 6%;">
             <label for="" class="checkbox">Utilizar os usuários anteriores:</label>
             <input type="checkbox" name="" class="checkbox" id="checkbox" onclick="viewcheckbox()" style="height: 1.8%;">
-            <label for="">Quais são os e-mails?</label>
-            <textarea name="" id="loginWebRTC_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
+            <label for=""><label class="asterisk">*</label>Quais são os e-mails?</label>
+            <textarea name="" id="loginWebRTC_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br" onmouseover="mouseacima(loginWebRTC_id)" onmouseout="mousefora(loginWebRTC_id)"></textarea>
             <label for="">Quais são os domínios dos e-mails?</label>
             <select name="" id="dominio">
                 <datalist>
@@ -94,8 +94,8 @@ ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
                 </datalist>
             </select>
             <hr>
-            <button type="submit" onclick="saveWebRTC()">Salvar</button>
-            <button type="submit">Criar Perfil</button>
+            <button type="submit" onclick="saveWebRTC()">Criar WebRTC</button>
+            <button type="submit" class="webRTC" id="createUser">&lt&lt Criar Perfil</button>
         </div>
 
     </div>

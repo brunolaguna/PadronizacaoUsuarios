@@ -1,3 +1,7 @@
+// Functions after error
+function mouseacima(x){x.style.borderColor = '#85A9F8'}
+function mousefora(y){y.style.borderColor = '#000000ad'}
+
 // User creation
 async function clicked(){ //This function must be asynchronous, otherwise the file will not save the data.
 
@@ -29,14 +33,20 @@ async function clicked(){ //This function must be asynchronous, otherwise the fi
     const string = `"name","email","phone_work","extension","title","department","email_manager","location_work","roles_divisions","queues","division","skills","hire_date"`
     
     if(division == 0){
+        let division = document.getElementById('division')
         alert('Você não selecionou alguma division!')
+        division.style.borderColor = 'red'
         return
     } else if(nome.length != login.length){
         alert('A quantidade de nomes e e-mails estão diferentes!')
+        nomeStyle.style.borderColor = 'red'
+        loginStyle.style.borderColor = 'red'
         return
     } 
       else if(e == 0){
+        let e = document.querySelector('.extension')
         const continuar = confirm('Você não informou a extension!\nClique em "OK" para continuar, ou "Cancelar" para sair!\nSe você continuar, os perfis irão ficar sem extension!')
+        e.style.borderColor = 'blue'
         console.log(continuar)
         if(continuar === true && (nome.length && login.length) < 1){
             alert('Você não adicionou dados nos campos, "Nomes" e "E-mails"!')
@@ -47,6 +57,8 @@ async function clicked(){ //This function must be asynchronous, otherwise the fi
             return
         }
         else if(continuar === true && (nome.length && login.length) >= 1){
+            nomeStyle = document.getElementById('name_id')
+            loginStyle = document.getElementById('login_id')
             nomeStyle.style.borderColor = 'black'
             loginStyle.style.borderColor = 'black'
             if (division == 1) {
@@ -116,6 +128,7 @@ async function clicked(){ //This function must be asynchronous, otherwise the fi
         loginStyle = document.getElementById('login_id')
         nomeStyle.style.borderColor = 'black'
         loginStyle.style.borderColor = 'black'
+
         if (division == 1) {
             console.log('1')
             while(i<login.length){
@@ -183,30 +196,32 @@ async function clicked(){ //This function must be asynchronous, otherwise the fi
 }
 
 // #Back variables
-const back = document.getElementById('back')
-const front = document.getElementById('front')
-const card = document.getElementById('card')
 const four = document.querySelector('#four')
+const card = document.getElementById('card')
 const quatro = document.getElementById('quatro')
-
+const createUser = document.getElementById('createUser')
 const checkbox = document.querySelector('#checkbox')
-let userWebRTC = document.getElementById('userWebRTC')
 let loginWebRTC_id = document.getElementById('loginWebRTC_id')
 
 // Flip to the WebRTC, via the button
 function WebRTC(){
     card.classList.toggle('flip')
+    createUser.style.visibility = 'visible'
+    createUser.style.transition = '1s'
 }
 // Flip to the WebRTC, via the h1 -> #four
 four.addEventListener('click', ()=>{
     card.classList.toggle('flip')
+    createUser.style.visibility = 'visible'
 })
 // Flip to the WebRTC, via the h1 -> #quatro
 quatro.addEventListener('click', ()=>{
     card.classList.toggle('flip')
+    createUser.style.visibility = 'hidden'
+    createUser.style.transition = '1s'
 })
 
-
+// When clicking on the checkbox, leave it disabled and gray
 function viewcheckbox(){
     if(checkbox.checked === true){
         loginWebRTC_id.disabled = true
@@ -217,29 +232,31 @@ function viewcheckbox(){
     }
 }
 
+// WebRTC creation
 async function saveWebRTC(){
-    var user = document.getElementById('user').value
+    // Variables
     let login = document.getElementById('login_id').value.toLowerCase().split('\n')
-    let string = `name,base,site,email,remoteAddress,hardwareId,keyLabel,lineAppearanceId,did,extension`
-    var select_site = document.getElementById('select_site').value
-    var baseSettings = document.getElementById('baseSettings').value
     login = login.filter(i => i.trim())
-    var hole = []
+
     var loginWebRTCArray = document.getElementById('loginWebRTC_id').value.toLowerCase().split('\n')
     loginWebRTCArray = loginWebRTCArray.filter(i => i.trim())
-    let dominio = document.getElementById('dominio').value
     
-    if((login.length == 0 || user == 0) && checkbox.checked === true){
-        alert('Você não informou a quantidade de usuários!')
+    let dominio = document.getElementById('dominio').value
+    var baseSettings = document.getElementById('baseSettings').value
+    var select_site = document.getElementById('select_site').value
+    var hole = []
+    let string = `name,base,site,email,remoteAddress,hardwareId,keyLabel,lineAppearanceId,did,extension`
+    
+    // Create WebRTC for #front e-mails who are in the #login field
+    if(login.length == 0 && checkbox.checked === true){
+        const loginStyle = document.getElementById('login_id')
+        alert('Não foi informado usuário no campo de e-mails!')
+        loginStyle.style.borderColor = 'red'
         return
-    }
-    else if(checkbox.checked === true && login.length != user){
-        alert('Você informou a quantidade incorreta de usuários!')
-        return
-    } else if(checkbox.checked === true && login.length == user){
+    } else if(checkbox.checked === true && login.length > 0){
         i=0
         var loginWebRTC_four = []
-        while(i<user){
+        while(i<login.length){
             result = login[i].indexOf('@')
             if(result != -1){
                 loginWebRTC_four[i] = login[i].substring(0, login[i].indexOf('@'))
@@ -249,10 +266,15 @@ async function saveWebRTC(){
             }
             i++
         }
+        // Create WebRTC for #back e-mails
     } else if(loginWebRTCArray.length == 0){
-        alert('Você informou a quantidade errada de usuários!')
+        alert('Não foi informado usuário no campo de e-mails!')
+        loginWebRTCArray_Style = document.getElementById('loginWebRTC_id')
+        loginWebRTCArray_Style.style.borderColor = 'red'
         return
     } else{
+        loginWebRTCArray_Style = document.getElementById('loginWebRTC_id')
+        loginWebRTCArray_Style.style.borderColor = 'black'
         console.log(loginWebRTCArray)
         i=0
         var loginWebRTC = []
@@ -285,3 +307,9 @@ async function saveWebRTC(){
         await fileStream.write(myBlob)
         await fileStream.close()
 }
+
+createUser.addEventListener('click', ()=>{
+    card.classList.toggle('flip')
+    createUser.style.visibility = 'hidden'
+    createUser.style.transition = '1s'
+})
