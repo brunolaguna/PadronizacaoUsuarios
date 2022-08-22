@@ -4,55 +4,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="teste.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="shortcut icon" href="Images/favicon.ico" type="image/x-icon">
     <title>Padronização de Usuários</title>
-    <style>
-    #four{
-        color: #034879;
-    }
-    #four:hover{
-        color: #4c7fa8;
-    }
-    </style>
 </head>
+
 <body>
-    <div>
-        <h1>Solve</h1><h1 id="four">4</h1><h1>ME</h1>
-        <hr style="border-color: #034879;">
-        <label for="" id="howManyUsers"><label class="asterisk">*</label>Quantos usuários?</label>
-        <input type="number" name="" id="user" placeholder="ex: 9">
-        <label><label class="asterisk">*</label>Qual a primeira extension?</label>
-        <input type="number" name="" class="extension" placeholder="4090">
-        <label for="">Qual o "email_manager"?</label>
-        <input type="email" name="" id="emailManager" placeholder="ex: mpcarvalho@brasilseg.com.br">
-        <label for="">Localização:</label>
-        <select name="" id="location">
-            <datalist>
-                <option value="" hidden></option> 
-                <option value="SP">SP</option> 
-                <option value="FRANCA">FRANCA</option>
-            </datalist>
-        </select>
-        <label for=""><label class="asterisk">*</label>Divisão:</label>
-        <select name="select" id="division">
-            <datalist id="datalist">
-                <option value="" hidden></option>
-                <option value="1">Contact Center</option>
-                <option value="2">GAO</option>
-                <option value="3">Ouvidoria</option>
-                <option value="4">Tempo Assistência</option>
-                <option value="5">Teste (Capgemini)</option>
-            </datalist>
-        </select>
-        <label for=""><label class="asterisk">*</label>Quais são os nomes?</label>
-        <textarea name="" id="name_id" cols="30" rows="10" placeholder="ABHAY CHARAN GUINATTI LUTGENS RIZZO 
-ADRIANA APARECIDA CORREIA DEOCLECIANO"></textarea>
-        <label for=""><label class="asterisk">*</label>Quais são os logins?</label>
-        <textarea name="" id="login_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br"></textarea>
-        <hr>
-        <button type="submit" value="save" onclick="clicked()">Salvar</button>
-        <button type="submit" onclick="WebRTC()">Importação WebRTC</button>
+    <div class="flip" id="card"> <!--A "card" for creating the flip with the front and back.-->
+
+        <div class="face" id="front"> <!--Front "card"-->
+            <h1>Solve</h1><h1 id="four">4</h1><h1 id="me">ME</h1>
+            <hr id="firstHr">
+            <label>Qual a primeira extension?</label>
+            <input type="number" name="" class="extension" id="e" placeholder="4090" onmouseover="mouseacima(e)" onmouseout="mousefora(e)">
+            <label for="">Qual o "email_manager"?</label>
+            <input type="email" name="" id="emailManager" placeholder="mpcarvalho@brasilseg.com.br">
+            <label for="">Localização:</label>
+            <select name="" id="location">
+                <datalist>
+                    <option value="" hidden></option> 
+                    <option value="SP">SP</option> 
+                    <option value="FRANCA">FRANCA</option>
+                </datalist>
+            </select>
+            <label for=""><label class="asterisk">*</label>Division (Função):</label>
+            <select name="select" id="division" onmouseover="mouseacima(division)" onmouseout="mousefora(division)">
+                <datalist id="datalist">
+                    <option value="" hidden></option>
+                    <option value="1">Contact Center (Atendente)</option>
+                    <option value="2">GAO</option>
+                    <option value="3">Ouvidoria</option>
+                    <option value="4">Tempo Assistência</option>
+                    <option value="5">Teste (Capgemini)</option>
+                </datalist>
+            </select>
+            <label for="">Quais são os domínios dos e-mails?</label>
+            <select name="" id="dominio_four">
+                <datalist>
+                    <option value="@brasilseg.com.br">Brasilseg</option>
+                    <option value="@tempoassist.com.br">Tempo Assistência</option>
+                    <option value="@mapfre.com">Mapfre</option>
+                    <option value="@teleperformance.com.br">teleperformance</option>
+                    <option value="@solve4me.com.br">Solve4ME</option>
+                </datalist>
+            </select>
+            <label for=""><label class="asterisk">*</label>Quais são os nomes?</label>
+            <textarea name="" id="name_id" cols="30" rows="10" placeholder="ABHAY CHARAN GUINATTI LUTGENS RIZZO 
+ADRIANA APARECIDA CORREIA DEOCLECIANO" onmouseover="mouseacima(name_id)" onmouseout="mousefora(name_id)"></textarea>
+            <label for=""><label class="asterisk">*</label>Quais são os e-mails?</label>
+            <textarea name="" id="login_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br" onmouseover="mouseacima(login_id)" onmouseout="mousefora(login_id)"></textarea>
+            <hr>
+            <button type="submit" value="save" onclick="clicked()">Criar usuário</button>
+            <button type="submit" class="webRTC" onclick="WebRTC()">Criar WebRTC &gt&gt</button>
+        </div>
+
+        <div class="face" id="back"> <!--Back "card"-->
+            <h1>Solve</h1><h1 class="four" id="quatro">4</h1><h1>ME</h1>
+            <hr id="firstHr" style="top: 6%;">
+            <label for="" class="checkbox">Utilizar os usuários anteriores:</label>
+            <input type="checkbox" name="" class="checkbox" id="checkbox" onclick="viewcheckbox()" style="height: 1.8%;">
+            <label for=""><label class="asterisk">*</label>Quais são os e-mails?</label>
+            <textarea name="" id="loginWebRTC_id" cols="30" rows="10" placeholder="bandrezzo@brasilseg.com.br" onmouseover="mouseacima(loginWebRTC_id)" onmouseout="mousefora(loginWebRTC_id)"></textarea>
+            <label for="">Quais são os domínios dos e-mails?</label>
+            <select name="" id="dominio">
+                <datalist>
+                    <option value="@brasilseg.com.br">Brasilseg</option>
+                    <option value="@tempoassist.com.br">Tempo Assistência</option>
+                    <option value="@mapfre.com">Mapfre</option>
+                    <option value="@teleperformance.com.br">teleperformance</option>
+                    <option value="@solve4me.com.br">Solve4ME</option>
+                </datalist>
+            </select>
+            <label for="">Base Settings:</label>
+            <select name="" id="baseSettings">
+                <datalist>
+                    <option value="Genesys Cloud WebRTC">Genesys Cloud WebRTC</option>
+                    <option value="Koller">Koller</option>
+                </datalist>
+            </select>
+            <label for="">Site:</label>
+            <select name="" id="select_site">
+                <datalist>
+                    <option value="SITE_SP">SITE_SP</option>
+                    <option value="SP">SP</option>
+                    <option value="CAMPANHAS BRASILSEG">CAMPANHAS BRASILSEG</option>
+                    <option value="CAMPANHAS SAO PAULO">CAMPANHAS SAO PAULO</option>
+                    <option value="CAMPANHAS FRANCA">CAMPANHAS FRANCA</option>
+                    <option value="TELECOM">TELECOM</option>
+                </datalist>
+            </select>
+            <hr>
+            <button type="submit" onclick="saveWebRTC()">Criar WebRTC</button>
+            <button type="submit" class="webRTC" id="createUser">&lt&lt Criar Perfil</button>
+        </div>
+
     </div>
     <script src="index.js"></script>
 </body>
